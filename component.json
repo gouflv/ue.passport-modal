@@ -1,0 +1,12 @@
+{
+  "name": "ue.timeline",
+  "version": "0.0.0",
+  "devDependencies": {
+    "jquery-mockjax": "~1.5.1"
+  },
+  "dependencies": {
+    "jquery": "~1.4.0",
+    "underscore": "~1.4.4",
+    "handlebars.js": "~1.0.10"
+  }
+}
