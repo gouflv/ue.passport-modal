@@ -1,4 +1,6 @@
 node_modules
 components
 dist
+js/*.coffee.js
+
 .DS_Store
