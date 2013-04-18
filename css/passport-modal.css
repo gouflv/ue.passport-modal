@@ -1,0 +1,245 @@
+.passport-modal input[type="text"],
+.passport-modal input[type="password"] {
+    color: #999;
+    *color: #333;
+}
+
+.passport-modal input[type="text"]:hover,
+.passport-modal input[type="password"]:hover,
+textarea:hover,
+.passport-modal input[type="text"]:focus,
+.passport-modal input[type="password"]:focus {
+    color: #333;
+}
+
+.passport-modal button,
+.passport-modal input {
+    vertical-align: baseline;
+    *vertical-align: middle;
+    outline: 0;
+}
+
+.passport-modal a:focus,
+.passport-modal a:active,
+.passport-modal a:hover {
+    outline: 0;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.passport-modal-backdrop {
+    position: fixed;
+    _position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    z-index: 2;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+}
+
+.passport-modal {
+    display: none;
+    position: fixed;
+    _position: absolute;
+    left: 50%;
+    top: 10%;
+    width: 460px;
+    margin-left: -230px;
+    z-index: 3;
+    outline: 0;
+}
+
+.passport-modal .modal-box-wrap {
+    padding: 7px;
+    background:rgba(0,0,0,0.5);
+    *background: url(http://ue1.shouyou.itc.cn/images/www/index/2012/pop-box/pop-wrap.png) center center repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);
+}
+
+
+
+.passport-modal .modal-box {
+    position: relative;
+    border: 1px solid #3B608D;
+    background: #FFF;
+}
+
+.passport-modal .modal-tab-item a,
+.passport-modal .modal-tab-item-b1,
+.passport-modal .modal-tab-item-b2 {
+    background: url(http://ue1.shouyou.itc.cn/images/www/index/2012/pop-box/pop-box.png);
+}
+
+.passport-modal .modal-tab {
+    position: relative;
+    height: 29px;
+    padding: 10px 0 0 3px;
+    background: url(http://ue1.shouyou.itc.cn/images/www/index/2012/pop-box/pop-box.png) 0 -100px repeat-x;
+    overflow: hidden;
+}
+
+.passport-modal .modal-close {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url(http://ue1.17173.itc.cn/2011/17173my/images/win-skin.gif) -80px -39px no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.passport-modal .modal-tab-item {
+    position: relative;
+    float: left;
+    height: 29px;
+    margin-left: 3px;
+}
+
+.passport-modal .modal-tab-item a {
+    display: inline-block;
+    _width: 50px;
+    padding: 0 20px;
+    background-position: -5px -200px;
+    line-height: 29px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    min-width: 50px;
+    _overflow-x: visible;
+}
+
+.passport-modal .modal-tab-item-b1,
+.passport-modal .modal-tab-item-b2 {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 29px;
+    background-position: 0 -200px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.passport-modal .modal-tab-item-b2 {
+    left: auto;
+    right: 0;
+    background-position: right -200px;
+}
+
+.passport-modal .current a {
+    background-position: -5px -150px;
+    color: #2D2813;
+}
+
+.passport-modal .current .modal-tab-item-b1 {
+    background-position: 0 -150px;
+}
+
+.passport-modal .current .modal-tab-item-b2 {
+    background-position: right -150px;
+}
+
+.passport-modal .modal-main-wrap {
+    height: 214px;
+    background: url(http://ue1.shouyou.itc.cn/images/www/index/2012/pop-box/login-box-bg.jpg) right bottom no-repeat;
+    font-size: 12px;
+    font-family: '宋体';
+}
+
+.passport-modal .modal-form {
+    padding: 35px 45px;
+}
+
+.passport-modal .modal-form .item {
+    margin-bottom: 8px;
+    zoom: 1;
+    overflow: hidden;
+}
+
+.passport-modal .modal-form .item .tit {
+    float: left;
+    width: 40px;
+    margin-right: 10px;
+    line-height: 30px;
+    color: #5C6063;
+    text-align: right;
+}
+
+.passport-modal .modal-form .item .txt {
+    width: 170px;
+    height: 28px;
+    padding: 0 5px;
+    border: 1px solid #B3B3B3;
+    line-height: 28px;
+}
+
+.passport-modal .modal-form .item-2 {
+    margin-bottom: 10px;
+}
+
+.passport-modal .modal-form .item-3 {
+    width: 182px;
+    margin-bottom: 10px;
+    padding-left: 50px;
+}
+
+.passport-modal .modal-form .item-3-c1,
+.passport-modal .modal-form .item-3-c1 label {
+    float: left;
+}
+
+.passport-modal .modal-form .forget {
+    float: right;
+    color: #3BA7D7;
+    white-space: nowrap;
+}
+
+.passport-modal .modal-form .forget:hover {
+    text-decoration: underline;
+}
+
+.passport-modal .modal-form .item-3 .auto-checkbox {
+    float: left;
+    margin: 2px 7px 0 0;
+    _margin: 0 7px 0 0;
+    vertical-align: middle;
+}
+
+.passport-modal .modal-form .item-4 {
+    width: 182px;
+    padding-left: 50px;
+}
+
+.passport-modal .modal-btn-signin {
+    display: block;
+    width: 118px;
+    height: 31px;
+    border: none;
+    background: url(http://ue1.shouyou.itc.cn/images/www/index/2012/pop-box/pop-box.png) 0 0 no-repeat;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.passport-modal .modal-btn-signin:hover {
+    background-position: 0 -50px;
+}
+
+.passport-modal .modal-waitting-box {
+    height: 214px;
+    line-height: 200px;
+    font-size: 14px;
+    text-align: center;
+}
