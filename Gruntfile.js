@@ -8,6 +8,8 @@ module.exports = function(grunt) {
 	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
 	grunt.initConfig({
+		pkg: grunt.file.readJSON('package.json'),
+
 		connect: {
 			options: {
 				port: 9001
@@ -30,7 +32,7 @@ module.exports = function(grunt) {
             },
 			livereload: {
 				files: [
-					'*.html',
+					'{,*/}*.html',
 					'css/{,*/}*.css',
 					'js/{,*/}*.js'
 				],
@@ -51,7 +53,7 @@ module.exports = function(grunt) {
 		},
 		cssmin: {
 			options: {
-				banner: '/* create by lv.gouf@gmail.com */',
+				banner: '/*! <%= pkg.name %>-<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */',
 				keepSpecialComments: 0,
 				keepBreaks: true
 			},
@@ -65,7 +67,7 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			options: {
-				banner: '/* create by lv.gouf@gmail.com */',
+				banner: '/*! <%= pkg.name %>-<%= pkg.version %> <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> */\n',
 				preserveComments: false
 			},
 			dist: {
