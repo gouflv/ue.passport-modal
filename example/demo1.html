@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Passpost Modal</title>
+	
+	<link rel="stylesheet" href="http://ue.shouyou.itc.cn/cache/lib/v2/reset-and-utils-1.0.css" />
+
+	<script src="http://ue.shouyou.itc.cn/cache/lib/v1/load-1.0_utils-1.0_jquery-1.4.min.js"></script>
+	<script src="http://ue8.17173.itc.cn/cache/lib/v2/passport-1.0/loader.js"></script>
+    <script src="http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.0/passport-modal.min.js"></script>
+</head>
+<body style="height:2000px">
+	
+    <h1>Passport Modal</h1>
+
+    <p>
+        <a href="#" id="open">test</a>
+    </p>
+    
+    <script>
+    var modal
+
+    $(function() {
+
+        modal = $.passport_modal({
+
+            onInit: function() {
+                // console.log('init.')
+            },
+            onLogoutSuccess: function() {
+                $('#open').text('登录')
+            },
+            onLoginSuccess: function(pspt) {
+                $('#open').text('已经登录')
+
+                // console.log(pspt)
+            }
+        })
+
+        $('#open').click(function() {
+
+            $.passport_modal('show')
+
+            return false
+        })
+    })
+    </script>
+
+    
+    <style>
+    .userinfo_wrap {border: 1px solid #ccc;margin: 20px 0 0 10px;width: 300px;}
+    </style>
+    <!-- 用户信息容器 -->
+    <div class="userinfo_wrap">
+        <div>用户信息</div>
+
+        <!-- 自定义用户信息模板 -->
+        <div class="info-box hidden" id="component_passport_info_tmpl">
+            <div class="logout-err"></div>
+            <div class="portrait"></div>
+            <div class="username"></div>
+            <div class="nickname"></div>
+            <a class="logout-btn">注销</a>
+        </div>
+
+
+    </div>
+
+    
+
+</body>
+</html>
