@@ -85,21 +85,43 @@ class Modal
 		this
 
 	render_passport: () ->
-		passport = @el.data 'passport'
+		@passport = @el.data 'passport'
+		_this = this
 
 		config =
 			element: @el.get(0)
 			ui: 'none'
 			onInit: @option.onInit
 			onLoginStart: @option.onLoginStart
-			onLoginSuccess: @option.onLoginSuccess
+			onLoginSuccess: () ->
+				# push passport object manually
+				# TODO: make a param warper util to all event callback
+				pspt = this
+				_this.login_success_wraper.call _this, pspt
+
 			onLoginFailure: @option.onLoginFailure
 			onLogoutStart: @option.onLogoutStart
 			onLogoutSuccess: @option.onLogoutSuccess
 			onLogoutFailure: @option.onLogoutFailure
 
-		not passport and require ['passport'], (Passpost) =>
-			@el.data 'passport', (passport = new Passpost(config))
+		unless @passport
+			timer = setInterval =>
+				if root.modules and root.modules.config
+					clearInterval(timer)
+					this.loader(config)
+			, 10
+
+	loader: (config) ->
+		require ['passport'], (Passpost) =>
+			@el.data 'passport', (@passport = new Passpost(config))
+
+	login_success_wraper: (pspt) ->				
+		info = @el.find('.info-box').addClass 'is-login'
+		ctx = $('#component_passport_info_tmpl')
+		# ctx.parent().find('.is-login').remove()
+		info.insertAfter ctx
+		
+		this.hide()
 
 $.fn.passport_modal = (option={}) ->		
 	this.each () ->
