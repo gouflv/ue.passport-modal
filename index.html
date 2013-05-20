@@ -1,377 +1,340 @@
-<!doctype html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<style>
+<title>README</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: 29d1c5bc36da364ad5aa86946d420b7bbc54a253 */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
 body {
-  font-family: Helvetica, arial, sans-serif;
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
   font-size: 14px;
   line-height: 1.6;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: white;
-  padding: 30px; }
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
 
-body > *:first-child {
-  margin-top: 0 !important; }
-body > *:last-child {
-  margin-bottom: 0 !important; }
+body>*:first-child {
+  margin-top: 0 !important;
+}
 
-a {
-  color: #4183C4; }
-a.absent {
-  color: #cc0000; }
-a.anchor {
-  display: block;
-  padding-left: 30px;
-  margin-left: -30px;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0; }
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
 
 h1, h2, h3, h4, h5, h6 {
   margin: 20px 0 10px;
   padding: 0;
   font-weight: bold;
   -webkit-font-smoothing: antialiased;
-  cursor: text;
-  position: relative; }
+}
 
-h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
-  text-decoration: none; }
-
-h1 tt, h1 code {
-  font-size: inherit; }
-
-h2 tt, h2 code {
-  font-size: inherit; }
-
-h3 tt, h3 code {
-  font-size: inherit; }
-
-h4 tt, h4 code {
-  font-size: inherit; }
-
-h5 tt, h5 code {
-  font-size: inherit; }
-
-h6 tt, h6 code {
-  font-size: inherit; }
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
 
 h1 {
   font-size: 28px;
-  color: black; }
+  color: #000;
+}
 
 h2 {
   font-size: 24px;
-  border-bottom: 1px solid #cccccc;
-  color: black; }
-
-h3 {
-  font-size: 18px; }
-
-h4 {
-  font-size: 16px; }
-
-h5 {
-  font-size: 14px; }
-
-h6 {
-  color: #777777;
-  font-size: 14px; }
-
-p, blockquote, ul, ol, dl, li, table, pre {
-  margin: 15px 0; }
-
-hr {
-  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
-  border: 0 none;
-  color: #cccccc;
-  height: 4px;
-  padding: 0;
+  border-bottom: 1px solid #ccc;
+  color: #000;
 }
 
-body > h2:first-child {
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
   margin-top: 0;
-  padding-top: 0; }
-body > h1:first-child {
-  margin-top: 0;
-  padding-top: 0; }
-  body > h1:first-child + h2 {
-    margin-top: 0;
-    padding-top: 0; }
-body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
-  margin-top: 0;
-  padding-top: 0; }
+  padding-top: 0;
+}
 
 a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
   margin-top: 0;
-  padding-top: 0; }
+  padding-top: 0;
+}
 
-h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
-  margin-top: 0; }
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
 
-li p.first {
-  display: inline-block; }
-li {
-  margin: 0; }
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
 ul, ol {
-  padding-left: 30px; }
+  padding-left: 30px;
+}
 
-ul :first-child, ol :first-child {
-  margin-top: 0; }
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
 
 dl {
-  padding: 0; }
-  dl dt {
-    font-size: 14px;
-    font-weight: bold;
-    font-style: italic;
-    padding: 0;
-    margin: 15px 0 5px; }
-    dl dt:first-child {
-      padding: 0; }
-    dl dt > :first-child {
-      margin-top: 0; }
-    dl dt > :last-child {
-      margin-bottom: 0; }
-  dl dd {
-    margin: 0 0 15px;
-    padding: 0 15px; }
-    dl dd > :first-child {
-      margin-top: 0; }
-    dl dd > :last-child {
-      margin-bottom: 0; }
+  padding: 0;
+}
 
-blockquote {
-  border-left: 4px solid #dddddd;
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
   padding: 0 15px;
-  color: #777777; }
-  blockquote > :first-child {
-    margin-top: 0; }
-  blockquote > :last-child {
-    margin-bottom: 0; }
+}
 
-table {
-  padding: 0;border-collapse: collapse; }
-  table tr {
-    border-top: 1px solid #cccccc;
-    background-color: white;
-    margin: 0;
-    padding: 0; }
-    table tr:nth-child(2n) {
-      background-color: #f8f8f8; }
-    table tr th {
-      font-weight: bold;
-      border: 1px solid #cccccc;
-      margin: 0;
-      padding: 6px 13px; }
-    table tr td {
-      border: 1px solid #cccccc;
-      margin: 0;
-      padding: 6px 13px; }
-    table tr th :first-child, table tr td :first-child {
-      margin-top: 0; }
-    table tr th :last-child, table tr td :last-child {
-      margin-bottom: 0; }
+dl dd>:first-child {
+  margin-top: 0px;
+}
 
-img {
-  max-width: 100%; }
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
 
-span.frame {
-  display: block;
-  overflow: hidden; }
-  span.frame > span {
-    border: 1px solid #dddddd;
-    display: block;
-    float: left;
-    overflow: hidden;
-    margin: 13px 0 0;
-    padding: 7px;
-    width: auto; }
-  span.frame span img {
-    display: block;
-    float: left; }
-  span.frame span span {
-    clear: both;
-    color: #333333;
-    display: block;
-    padding: 5px 0 0; }
-span.align-center {
-  display: block;
-  overflow: hidden;
-  clear: both; }
-  span.align-center > span {
-    display: block;
-    overflow: hidden;
-    margin: 13px auto 0;
-    text-align: center; }
-  span.align-center span img {
-    margin: 0 auto;
-    text-align: center; }
-span.align-right {
-  display: block;
-  overflow: hidden;
-  clear: both; }
-  span.align-right > span {
-    display: block;
-    overflow: hidden;
-    margin: 13px 0 0;
-    text-align: right; }
-  span.align-right span img {
-    margin: 0;
-    text-align: right; }
-span.float-left {
-  display: block;
-  margin-right: 13px;
-  overflow: hidden;
-  float: left; }
-  span.float-left span {
-    margin: 13px 0 0; }
-span.float-right {
-  display: block;
-  margin-left: 13px;
-  overflow: hidden;
-  float: right; }
-  span.float-right > span {
-    display: block;
-    overflow: hidden;
-    margin: 13px auto 0;
-    text-align: right; }
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
 
 code, tt {
-  margin: 0 2px;
-  padding: 0 5px;
+  margin: 0 0px;
+  padding: 0px 0px;
   white-space: nowrap;
   border: 1px solid #eaeaea;
   background-color: #f8f8f8;
-  border-radius: 3px; }
+  border-radius: 3px;
+}
 
-pre code {
+pre>code {
   margin: 0;
   padding: 0;
   white-space: pre;
   border: none;
-  background: transparent; }
-
-.highlight pre {
-  background-color: #f8f8f8;
-  border: 1px solid #cccccc;
-  font-size: 13px;
-  line-height: 19px;
-  overflow: auto;
-  padding: 6px 10px;
-  border-radius: 3px; }
+  background: transparent;
+}
 
 pre {
   background-color: #f8f8f8;
-  border: 1px solid #cccccc;
+  border: 1px solid #ccc;
   font-size: 13px;
   line-height: 19px;
   overflow: auto;
   padding: 6px 10px;
-  border-radius: 3px; }
-  pre code, pre tt {
-    background-color: transparent;
-    border: none; }
+  border-radius: 3px;
+}
 
-sup {
-    font-size: 0.83em;
-    vertical-align: super;
-    line-height: 0;
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
 }
-* {
-	-webkit-print-color-adjust: exact;
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
 }
-@media screen and (min-width: 914px) {
-    body {
-        width: 854px;
-        margin:0 auto;
-    }
+
+blockquote>:first-child {
+  margin-top: 0px;
 }
-@media print {
-	table, pre {
-		page-break-inside: avoid;
-	}
-	pre {
-		word-wrap: break-word;
-	}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
 }
 </style>
-<title>Passport Modal</title>
-
 </head>
 <body>
 <h1>Passport Modal</h1>
-
-<blockquote><p>提供通用样式的弹窗登录</p></blockquote>
-
+<blockquote>
+<p>提供通用样式的弹窗登录</p>
+</blockquote>
 <p>Click <a href="example/demo1.html">Demo</a></p>
-
 <h2>使用</h2>
-
 <h3>准备</h3>
-
-<p>1.该组建依赖 Passport-1.0, 因此需要在页面引入
-<code>&lt;script src="http://ue8.17173.itc.cn/cache/lib/v2/passport-1.0/loader.js"&gt;&lt;/script&gt;</code></p>
-
+<p>1.该组建依赖 <strong>Passport-2.0</strong>, 因此需要在页面引入
+<code>&lt;script src=&quot;http://ue8.17173.itc.cn/cache/lib/v2/passport-2.0/passport.pak.js &quot;&gt;&lt;/script&gt;</code></p>
 <p>2.然后加入该弹窗组建
-<code>&lt;script src="http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.0/passport-modal.min.js"&gt;&lt;/script&gt;</code></p>
-
+<code>&lt;script src=&quot;http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.1/passport-modal.min.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>3.创建用户信息模板</p>
-
-<blockquote><p>用户登录后显示的用户信息面板暂时不提供通用样式, 因此需要提供相应模板
-该模板参照Passport的元素渲染规则, 详细参考<strong>自定义外观指南</strong>的 <code>infoElement</code>小节</p></blockquote>
-
+<blockquote>
+<p>用户登录后显示的用户信息面板暂时不提供通用样式, 因此需要提供相应模板
+该模板参照Passport的元素渲染规则, 详细参考<strong>自定义外观指南</strong>的 <code>infoElement</code>小节</p>
+</blockquote>
 <p>默认读取 <code>#component_passport_info_tmpl</code> 元素作为用户信息模板</p>
-
 <p>模板直接放在用户信息面板的容器内, 组件将自动将渲染后显示模板</p>
+<pre><code>&lt;div class=&quot;userinfo_wrap&quot;&gt;
 
-<pre><code>&lt;div class="userinfo_wrap"&gt;
-
-    &lt;div class="info-box hidden" id="component_passport_info_tmpl"&gt;
+    &lt;div class=&quot;info-box hidden&quot; id=&quot;component_passport_info_tmpl&quot;&gt;
         &lt;div&gt;自定义用户信息&lt;/div&gt;
-        &lt;div class="logout-err"&gt;&lt;/div&gt;
-        &lt;div class="portrait"&gt;&lt;/div&gt;
-        &lt;div class="username"&gt;&lt;/div&gt;
-        &lt;div class="nickname"&gt;&lt;/div&gt;
-        &lt;a class="logout-btn"&gt;注销&lt;/a&gt;
+        &lt;div class=&quot;logout-err&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;portrait&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;username&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;nickname&quot;&gt;&lt;/div&gt;
+        &lt;a class=&quot;logout-btn&quot;&gt;注销&lt;/a&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 
 <h3>调用方式</h3>
-
 <ol>
-<li><p>初始化弹窗 <code>$.passport_modal(option)</code>, 可以传入配置参数</p></li>
-<li><p>显示弹窗 <code>$.passport_modal('show')</code></p></li>
-<li><p>关闭弹窗 <code>$.passport_modal('hide')</code></p></li>
+<li>
+<p>初始化弹窗 <code>$.passport_modal(option)</code>, 可以传入配置参数</p>
+</li>
+<li>
+<p>显示弹窗 <code>$.passport_modal('show')</code></p>
+</li>
+<li>
+<p>关闭弹窗 <code>$.passport_modal('hide')</code></p>
+</li>
 </ol>
-
-
 <h3>参数配置</h3>
-
-<blockquote><p>事件回调</p></blockquote>
-
+<h4>事件回调</h4>
 <p><code>$.passport_modal({...})</code></p>
-
 <p>提供 <code>onLoginSuccess</code>, <code>onLoginFailure</code>, <code>onLogoutSuccess</code> 等回掉参数, 功能与Passport保持一致, <a href="">详见文档</a></p>
-
 <p>实例</p>
-
 <pre><code>$.passport_modal({
     onInit: function() { alert('init.') }
 })
 </code></pre>
 
+<h4>base_index</h4>
+<p>控制弹出层<code>z-index</code>, 背景遮罩自动为<code>base_index-1</code></p>
+<pre><code>$.passport_modal({
+    base_index: 5
+})
+</code></pre>
+
 <h4>APIs</h4>
-
 <p><code>onLoginSuccess</code> 方法内注入passport参数, 用于直接操作passport</p>
-
 <pre><code>$.passport_modal({
     onLoginSuccess: function(pspt) {
         //获取用户登录信息
@@ -381,30 +344,33 @@ sup {
 </code></pre>
 
 <h2>样式定制</h2>
-
 <p>Click <a href="example/demo2.html">Demo</a></p>
-
 <p>预先在页面内提供 <code>#component_passport_modal</code> 元素即可让组建直接使用</p>
-
 <p>可复用外层定位元素 <code>.passport-modal</code>, 定制内部元素参考<strong>自定义外观指南</strong></p>
-
 <h2>URL</h2>
-
 <p>源码</p>
-
 <pre><code>http://svn.17173.com/svn/ue-lib/ue.passport-modal
 </code></pre>
 
 <p>线上发布资源</p>
-
-<pre><code>http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.0/passport-modal.min.js
-http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.0/passport-modal.min.css
+<pre><code>http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.1/passport-modal.min.js
+http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.1/passport-modal.min.css
 </code></pre>
 
-<blockquote><p>样式由脚本自动引入</p></blockquote>
-
+<blockquote>
+<p>*样式由脚本自动引入</p>
+</blockquote>
+<h2>UPDATE</h2>
+<h3>v1.0.0 [2013-04-23]</h3>
+<p>init.</p>
+<h3>v1.1.0 [2013-05-20]</h3>
+<ol>
+<li>针对Passport2.0改版, 改为同步调用</li>
+<li>新增base_index配置</li>
+</ol>
 <hr />
+<p>wenhuilv [wenhuilv@cyou-inc.com]</p>
 
-<p>wenhuilv [lv.gouf@gmail.com]</p>
 </body>
 </html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

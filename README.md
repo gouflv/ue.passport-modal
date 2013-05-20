@@ -7,11 +7,11 @@ Click [Demo](example/demo1.html)
 ## 使用
 
 ### 准备
-1.该组建依赖 Passport-1.0, 因此需要在页面引入
-`<script src="http://ue8.17173.itc.cn/cache/lib/v2/passport-1.0/loader.js"></script>`
+1.该组建依赖 **Passport-2.0**, 因此需要在页面引入
+`<script src="http://ue8.17173.itc.cn/cache/lib/v2/passport-2.0/passport.pak.js "></script>`
 
 2.然后加入该弹窗组建
-`<script src="http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.0/passport-modal.min.js"></script>`
+`<script src="http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.1/passport-modal.min.js"></script>`
 
 3.创建用户信息模板
 
@@ -42,7 +42,7 @@ Click [Demo](example/demo1.html)
 3. 关闭弹窗 `$.passport_modal('hide')`
 
 ### 参数配置
-> 事件回调
+#### 事件回调
 
 `$.passport_modal({...})`
 
@@ -52,6 +52,13 @@ Click [Demo](example/demo1.html)
 
 	$.passport_modal({
 		onInit: function() { alert('init.') }
+	})
+
+#### base_index
+控制弹出层`z-index`, 背景遮罩自动为`base_index-1`
+
+	$.passport_modal({
+		base_index: 5
 	})
 	
 
@@ -84,10 +91,19 @@ Click [Demo](example/demo2.html)
 
 线上发布资源
 
-	http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.0/passport-modal.min.js
-	http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.0/passport-modal.min.css
+	http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.1/passport-modal.min.js
+	http://ue8.17173.itc.cn/cache/lib/v2/passport-modal-1.1/passport-modal.min.css
 
-> 样式由脚本自动引入
+> *样式由脚本自动引入
+
+
+##UPDATE
+###v1.0.0 [2013-04-23]
+init.
+
+###v1.1.0 [2013-05-20]
+1. 针对Passport2.0改版, 改为同步调用
+2. 新增base_index配置
 
 ---
-wenhuilv [lv.gouf@gmail.com]
+wenhuilv [wenhuilv@cyou-inc.com]
