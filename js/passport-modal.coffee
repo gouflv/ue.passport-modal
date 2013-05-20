@@ -18,6 +18,9 @@ class Modal
 			.render_passport()
 		
 	init_element: () ->
+		if @option.base_index
+			@el.css 'z-index', @option.base_index
+
 		@el.appendTo document.body
 		this
 	
@@ -70,6 +73,9 @@ class Modal
 					class: 'passport-modal-backdrop'
 				}).appendTo document.body
 
+			if @option.base_index
+				@backdrop.css 'z-index', +@option.base_index - 1
+
 			@backdrop.click (e) =>
 				e.preventDefault()
 				@el.eq(0).focus()
@@ -117,16 +123,9 @@ class Modal
 			onLogoutSuccess: @option.onLogoutSuccess
 			onLogoutFailure: @option.onLogoutFailure
 
-		unless @passport
-			timer = setInterval =>
-				if root.modules and root.modules.config
-					clearInterval(timer)
-					this.loader(config)
-			, 10
-
-	loader: (config) ->
-		require ['passport'], (Passpost) =>
+		if not @passport and root.Passpost
 			@el.data 'passport', (@passport = new Passpost(config))
+
 
 	login_success_wraper: (pspt) ->				
 		info = @el.find('.info-box').addClass 'is-login'
@@ -171,6 +170,7 @@ $.fn.passport_modal.defaults =
 	backdrop: true
 	show: false	
 	ui: 'none'
+	base_index: 5
 	onInit: $.noop
 	onLoginStart: $.noop
 	onLoginSuccess: $.noop
