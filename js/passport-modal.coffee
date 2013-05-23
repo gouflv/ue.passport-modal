@@ -123,8 +123,8 @@ class Modal
 			onLogoutSuccess: @option.onLogoutSuccess
 			onLogoutFailure: @option.onLogoutFailure
 
-		if not @passport and root.Passpost
-			@el.data 'passport', (@passport = new Passpost(config))
+		if not @passport and root.Passport
+			@el.data 'passport', (@passport = new Passport(config))
 
 
 	login_success_wraper: (pspt) ->				
