@@ -25,10 +25,6 @@ textarea:hover,
     outline: 0;
 }
 
-.no-scroll {
-    overflow: hidden;
-}
-
 .passport-modal-backdrop {
     position: fixed;
     _position: absolute;
