@@ -104,6 +104,3 @@ init.
 ###v1.1.0 [2013-05-20]
 1. 针对Passport2.0改版, 改为同步调用
 2. 新增base_index配置
-
----
-wenhuilv [wenhuilv@cyou-inc.com]
